@@ -2,151 +2,58 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Flow Planner</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cash Flow Planner</title>
 
-    <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
 <header>
 
-    <h1>Cash Flow Planner</h1>
-    <p>Plan your monthly business cash flow</p>
+  <h1>Cash Flow Planner</h1>
+
+  <p>Plan your monthly business cash flow</p>
 
 </header>
 
 <main>
 
-<section class="business-info">
+  <section class="card">
 
-<h2>Business Information</h2>
+    <h2>Business Information</h2>
 
-<label>Business Name</label>
+    <label for="businessName">Business Name</label>
 
-<input type="text" placeholder="Enter Business Name">
+    <input
+      type="text"
+      id="businessName"
+      placeholder="Enter Business Name">
 
-<br><br>
+    <br><br>
 
-<label>Financial Year</label>
+    <label for="financialYear">Financial Year</label>
 
-<input type="text" placeholder="2026-27">
+    <input
+      type="text"
+      id="financialYear"
+      placeholder="2026-27">
 
-<br><br>
+    <br><br>
 
-<label>Month</label>
+    <label for="month">Month</label>
 
-<select>
+    <select id="month">
 
-<option>July</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
 
-<option>August</option>
+    </select>
 
-<option>September</option>
-
-</select>
-
-</section>
-
-<br>
-
-<section class="opening-balance">
-
-<h2>Opening Balance</h2>
-
-<input type="number" placeholder="₹ Enter Opening Balance">
-
-</section>
-
-<br>
-
-<section class="cash-inflow">
-
-<h2>Cash Inflow</h2>
-
-<table>
-
-<tr>
-<th>Description</th>
-<th>Amount</th>
-</tr>
-
-<tr>
-<td>Sales</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Customer Collection</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Other Income</td>
-<td><input type="number"></td>
-</tr>
-
-</table>
-
-<br>
-
-<button>+ Add Income</button>
-
-</section>
-
-<br>
-
-<section class="cash-outflow">
-
-<h2>Cash Outflow</h2>
-
-<table>
-
-<tr>
-<th>Description</th>
-<th>Amount</th>
-</tr>
-
-<tr>
-<td>Purchase</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Salary</td>
-<td><input type="number"></td>
-</tr>
-
-<tr>
-<td>Other Expense</td>
-<td><input type="number"></td>
-</tr>
-
-</table>
-
-<br>
-
-<button>+ Add Expense</button>
-
-</section>
-
-<br>
-
-<section class="summary">
-
-<h2>Summary</h2>
-
-<p><strong>Total Inflow :</strong> ₹0</p>
-
-<p><strong>Total Outflow :</strong> ₹0</p>
-
-<p><strong>Net Cash Flow :</strong> ₹0</p>
-
-<p><strong>Closing Balance :</strong> ₹0</p>
-
-</section>
+  </section>
 
 </main>
 
