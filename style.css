@@ -290,3 +290,203 @@ header{
     color:#1565c0;
 
 }
+
+/* ===================================================
+   Part 3 & Part 4 - Buttons, Health, Footer & Responsive
+=================================================== */
+
+/* ---------- Buttons ---------- */
+
+button{
+
+    background:#1565c0;
+    color:#fff;
+
+    border:none;
+
+    border-radius:12px;
+
+    padding:14px 24px;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+    transform:translateY(-2px);
+
+}
+
+/* ---------- Action Buttons ---------- */
+
+#calculate-btn,
+#reset-btn,
+#download-btn,
+#print-btn,
+#add-income-btn,
+#add-expense-btn{
+
+    margin-top:16px;
+    margin-right:10px;
+    margin-bottom:10px;
+
+}
+
+/* ---------- Health Section ---------- */
+
+.health-status,
+.health-advice{
+
+    background:#f8fafc;
+
+    border-left:5px solid #1565c0;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+.health-status h3,
+.health-advice h3{
+
+    margin-bottom:8px;
+
+    color:#222;
+
+}
+
+/* ---------- Actions Card ---------- */
+
+#calculate-btn{
+
+    background:#2e7d32;
+
+}
+
+#calculate-btn:hover{
+
+    background:#1b5e20;
+
+}
+
+#reset-btn{
+
+    background:#ef6c00;
+
+}
+
+#reset-btn:hover{
+
+    background:#e65100;
+
+}
+
+#download-btn{
+
+    background:#1565c0;
+
+}
+
+#print-btn{
+
+    background:#5e35b1;
+
+}
+
+/* ---------- Footer ---------- */
+
+footer{
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    color:#666;
+
+    font-size:15px;
+
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:18px;
+
+    }
+
+    .nav-links{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+    }
+
+    .hero{
+
+        padding:60px 20px;
+
+    }
+
+    .hero h1{
+
+        font-size:46px;
+
+    }
+
+    .hero p{
+
+        font-size:18px;
+
+    }
+
+    .card{
+
+        padding:22px;
+
+    }
+
+    .card h2{
+
+        font-size:28px;
+
+    }
+
+    button{
+
+        width:100%;
+
+    }
+
+    #calculate-btn,
+    #reset-btn,
+    #download-btn,
+    #print-btn,
+    #add-income-btn,
+    #add-expense-btn{
+
+        margin-right:0;
+
+    }
+
+}
