@@ -72,8 +72,8 @@ header{
 
     content:"SF";
 
-    width:42px;
-    height:42px;
+    width:38px;
+    height:38px;
 
     border-radius:50%;
 
@@ -141,7 +141,7 @@ header{
 
 .hero h1{
 
-    font-size:54px;
+    font-size:46px;
     margin-bottom:18px;
 
 }
@@ -150,5 +150,143 @@ header{
 
     font-size:24px;
     opacity:.95;
+
+}
+
+/* ===================================================
+   Part 2 - Cards, Forms & Inputs
+=================================================== */
+
+/* ---------- Cards ---------- */
+
+.card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    margin-bottom:28px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.card h2{
+
+    font-size:36px;
+
+    color:#222;
+
+    margin-bottom:28px;
+
+}
+
+/* ---------- Labels ---------- */
+
+.card label{
+
+    display:block;
+
+    margin-top:18px;
+    margin-bottom:8px;
+
+    font-size:16px;
+    font-weight:600;
+
+    color:#444;
+
+}
+
+/* ---------- Inputs ---------- */
+
+.card input,
+.card select{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 16px;
+
+    border:1px solid #d9d9d9;
+
+    border-radius:12px;
+
+    background:#fff;
+
+    font-size:16px;
+
+    transition:.25s;
+
+}
+
+/* ---------- Placeholder ---------- */
+
+.card input::placeholder{
+
+    color:#9a9a9a;
+
+}
+
+/* ---------- Focus ---------- */
+
+.card input:focus,
+.card select:focus{
+
+    outline:none;
+
+    border-color:#1565c0;
+
+    box-shadow:0 0 0 4px rgba(21,101,192,.12);
+
+}
+
+/* ---------- Entry Cards ---------- */
+
+.entry-card{
+
+    background:#f8fafc;
+
+    border:1px solid #e8edf5;
+
+    border-radius:14px;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+}
+
+/* ---------- Summary ---------- */
+
+.summary-item{
+
+    background:#f8fafc;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-top:18px;
+
+}
+
+.summary-item h3{
+
+    font-size:18px;
+
+    margin-bottom:6px;
+
+}
+
+.summary-item p{
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#1565c0;
 
 }
