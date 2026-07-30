@@ -1,1 +1,85 @@
-/* SME Finance Toolkit Styles */
+/* ===== SME Finance Toolkit v1.0 ===== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fb;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background:#1565c0;
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1rem;
+}
+
+main{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+.tool-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    margin-bottom:25px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.tool-card h2{
+    margin-bottom:15px;
+}
+
+.tool-card p{
+    margin-bottom:20px;
+}
+
+button{
+    background:#1565c0;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0d47a1;
+}
+
+.coming-soon{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.coming-soon ul{
+    margin-top:15px;
+    padding-left:20px;
+}
+
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    color:#777;
+}
