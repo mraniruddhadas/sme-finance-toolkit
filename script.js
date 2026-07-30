@@ -48,8 +48,22 @@ resetBtn.addEventListener("click", function () {
 // Main Function
 // ===========================
 
-function calculateCashFlow(){
+function calculateCashFlow() {
 
-    alert("JavaScript is Connected Successfully!");
+    // Opening Balance
+    const opening = Number(openingBalance.value) || 0;
+
+    // Cash Inflow
+    const sales = Number(document.getElementById("salesAmount").value) || 0;
+
+    const collection = Number(document.getElementById("collectionAmount").value) || 0;
+
+    const otherIncome = Number(document.getElementById("otherIncomeAmount").value) || 0;
+
+    // Total Inflow
+    const inflow = sales + collection + otherIncome;
+
+    // Display Result
+    totalInflow.textContent = "₹" + inflow;
 
 }
