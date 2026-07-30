@@ -83,3 +83,40 @@ footer{
     margin-top:40px;
     color:#777;
 }
+/* ===== Planner Cards ===== */
+
+.card{
+    background:#ffffff;
+    padding:24px;
+    margin:25px 0;
+    border-radius:18px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+}
+
+.card h2{
+    color:#222;
+    margin-bottom:20px;
+    font-size:28px;
+}
+
+.card label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.card input,
+.card select{
+    width:100%;
+    padding:14px;
+    border:1px solid #d9d9d9;
+    border-radius:10px;
+    font-size:16px;
+}
+
+.card input:focus,
+.card select:focus{
+    outline:none;
+    border-color:#1565c0;
+}
