@@ -67,3 +67,16 @@ button {
 button:hover {
     background: #0D47A1;
 }
+
+.back-btn{
+    display:inline-block;
+    margin-bottom:20px;
+    text-decoration:none;
+    color:#1565C0;
+    font-weight:bold;
+    font-size:15px;
+}
+
+.back-btn:hover{
+    text-decoration:underline;
+}
