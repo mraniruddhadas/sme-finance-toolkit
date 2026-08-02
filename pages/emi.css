@@ -6,167 +6,173 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
+    background: #F3F7FC;
+    color: #222;
     padding: 20px;
 }
 
 header {
+    max-width: 700px;
+    margin: 0 auto 35px;
     text-align: center;
-    margin-bottom: 25px;
 }
 
 header h1 {
     color: #1565C0;
-    margin-bottom: 8px;
+    font-size: 48px;
+    margin-bottom: 10px;
 }
 
 header p {
     color: #666;
+    font-size: 20px;
+}
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: #1565C0;
+    font-weight: 600;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 700px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    color: #0D47A1;
+    transform: translateX(-4px);
 }
 
 .container {
-    max-width: 450px;
+    width: 100%;
+    max-width: 700px;
     margin: auto;
 }
 
 .card {
     background: #fff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+    text-align: center;
+    color: #1565C0;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
 }
 
 label {
     display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
     font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
     font-size: 16px;
 }
 
-button{
-
-width:100%;
-
-margin-top:30px;
-
-padding:16px;
-
-background:#1565C0;
-
-color:white;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.3s;
-
+input,
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+    transition: 0.25s;
 }
 
-button:hover{
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #1565C0;
+    box-shadow: 0 0 0 4px rgba(21, 101, 192, 0.15);
+}
 
-background:#0D47A1;
-
-transform:translateY(-2px);
-
+button {
+    width: 100%;
+    margin-top: 30px;
+    padding: 16px;
+    background: #1565C0;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
 }
 
 button:hover {
     background: #0D47A1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(21,101,192,.25);
 }
 
-.back-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-    text-decoration:none;
-    color:#1565C0;
-    font-weight:600;
-    margin:10px 0 20px;
-    transition:0.3s;
+.result-card {
+    display: none;
+    margin-top: 25px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.08);
 }
 
-.back-btn:hover{
-    color:#0D47A1;
-    transform:translateX(-3px);
+.result-card h2 {
+    text-align: center;
+    color: #1565C0;
+    margin-bottom: 20px;
 }
 
-.card h2{
-
-margin-bottom:25px;
-
-color:#1565C0;
-
-text-align:center;
-
+.result-card p {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
 }
 
-.form-grid{
+@media (min-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 
-display:grid;
+    .container {
+        max-width: 700px;
+    }
 
-grid-template-columns:1fr;
-
-gap:20px;
-
+    .card {
+        padding: 35px;
+    }
 }
 
-.form-group{
+@media (max-width: 767px) {
 
-display:flex;
+    header h1 {
+        font-size: 32px;
+    }
 
-flex-direction:column;
+    header p {
+        font-size: 16px;
+    }
 
-}
+    .card {
+        padding: 22px;
+    }
 
-select{
-
-width:100%;
-
-padding:14px;
-
-border-radius:10px;
-
-border:1px solid #ccc;
-
-font-size:16px;
-
-background:white;
-
-}
-
-@media(min-width:768px){
-
-.form-grid{
-
-grid-template-columns:1fr 1fr;
-
-}
-
-.container{
-
-max-width:700px;
-
-}
-
-.card{
-
-padding:35px;
-
-}
-
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
