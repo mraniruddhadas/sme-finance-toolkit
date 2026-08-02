@@ -183,6 +183,24 @@ header{
 
 }
 
+/* ---------- Summary Group (heading wrapper, not a card) ---------- */
+
+.summary-group{
+
+    margin-bottom:28px;
+
+}
+
+.summary-group > h2{
+
+    font-size:36px;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+}
+
 /* ---------- Labels ---------- */
 
 .card label{
