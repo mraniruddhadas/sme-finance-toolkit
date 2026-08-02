@@ -69,14 +69,17 @@ button:hover {
 }
 
 .back-btn{
-    display:inline-block;
-    margin-bottom:20px;
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
     text-decoration:none;
     color:#1565C0;
-    font-weight:bold;
-    font-size:15px;
+    font-weight:600;
+    margin:10px 0 20px;
+    transition:0.3s;
 }
 
 .back-btn:hover{
-    text-decoration:underline;
+    color:#0D47A1;
+    transform:translateX(-3px);
 }
