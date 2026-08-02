@@ -46,6 +46,56 @@ function registerEvents() {
         .getElementById("print-btn")
         .addEventListener("click", () => window.print());
 
+    document
+        .getElementById("add-income-btn")
+        .addEventListener("click", addIncomeEntry);
+
+    document
+        .getElementById("add-expense-btn")
+        .addEventListener("click", addExpenseEntry);
+
+    document
+        .getElementById("download-btn")
+        .addEventListener("click", downloadPDF);
+
+}
+
+
+// ==========================================
+// Add Income / Expense Rows
+// ==========================================
+
+function createEntryRow(defaultLabel) {
+
+    const row = document.createElement("div");
+    row.className = "entry-card";
+
+    row.innerHTML = `
+        <label>Description</label>
+        <input type="text" value="${defaultLabel}">
+
+        <label>Amount</label>
+        <input type="number" placeholder="₹0">
+    `;
+
+    return row;
+
+}
+
+function addIncomeEntry() {
+
+    document
+        .getElementById("income-list")
+        .appendChild(createEntryRow("New Income"));
+
+}
+
+function addExpenseEntry() {
+
+    document
+        .getElementById("expense-list")
+        .appendChild(createEntryRow("New Expense"));
+
 }
 
 
@@ -121,6 +171,18 @@ function formatCurrency(amount) {
 }
 
 
+function formatCurrencyPlain(amount) {
+
+    return "Rs. " + Number(amount).toLocaleString("en-IN", {
+
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+
+    });
+
+}
+
+
 // ==========================================
 // Read Amount Inputs
 // ==========================================
@@ -141,6 +203,31 @@ function getAmounts(containerId) {
     });
 
     return total;
+
+}
+
+
+function getEntries(containerId) {
+
+    const container = document.getElementById(containerId);
+
+    const rows = container.querySelectorAll(".entry-card");
+
+    const entries = [];
+
+    rows.forEach(row => {
+
+        const desc =
+            row.querySelector('input[type="text"]').value.trim() || "-";
+
+        const amount =
+            Number(row.querySelector('input[type="number"]').value) || 0;
+
+        entries.push({ desc, amount });
+
+    });
+
+    return entries;
 
 }
 
@@ -253,6 +340,112 @@ function calculateCashFlow() {
         ClosingBalance: closing
 
     });
+
+}
+
+
+// ==========================================
+// Download PDF
+// ==========================================
+
+function downloadPDF() {
+
+    if (!window.jspdf) {
+
+        alert("PDF library did not load. Check your internet connection and try again.");
+        return;
+
+    }
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const businessName =
+        document.getElementById("businessName").value.trim() || "Unnamed Business";
+
+    const financialYear =
+        document.getElementById("financialYear").value || "-";
+
+    const month =
+        document.getElementById("month").value || "-";
+
+    const opening =
+        Number(document.getElementById("openingBalance").value) || 0;
+
+    const income = getEntries("income-list");
+    const expense = getEntries("expense-list");
+
+    const totalInflow = income.reduce((sum, e) => sum + e.amount, 0);
+    const totalOutflow = expense.reduce((sum, e) => sum + e.amount, 0);
+    const net = totalInflow - totalOutflow;
+    const closing = opening + net;
+
+    let y = 20;
+
+    doc.setFontSize(18);
+    doc.text("Cash Flow Report", 14, y);
+
+    y += 10;
+    doc.setFontSize(11);
+    doc.text(`Business: ${businessName}`, 14, y);
+
+    y += 7;
+    doc.text(`Financial Year: ${financialYear}   Month: ${month}`, 14, y);
+
+    y += 7;
+    doc.text(`Opening Balance: ${formatCurrencyPlain(opening)}`, 14, y);
+
+    y += 12;
+    doc.setFontSize(14);
+    doc.text("Cash Inflow", 14, y);
+    y += 8;
+    doc.setFontSize(11);
+
+    income.forEach(e => {
+
+        doc.text(e.desc, 14, y);
+        doc.text(formatCurrencyPlain(e.amount), 150, y);
+        y += 7;
+
+        if (y > 270) { doc.addPage(); y = 20; }
+
+    });
+
+    y += 5;
+    doc.setFontSize(14);
+    doc.text("Cash Outflow", 14, y);
+    y += 8;
+    doc.setFontSize(11);
+
+    expense.forEach(e => {
+
+        doc.text(e.desc, 14, y);
+        doc.text(formatCurrencyPlain(e.amount), 150, y);
+        y += 7;
+
+        if (y > 270) { doc.addPage(); y = 20; }
+
+    });
+
+    if (y > 250) { doc.addPage(); y = 20; }
+
+    y += 8;
+    doc.setFontSize(14);
+    doc.text("Summary", 14, y);
+    y += 8;
+    doc.setFontSize(11);
+
+    doc.text(`Total Cash Inflow: ${formatCurrencyPlain(totalInflow)}`, 14, y);
+    y += 7;
+    doc.text(`Total Cash Outflow: ${formatCurrencyPlain(totalOutflow)}`, 14, y);
+    y += 7;
+    doc.text(`Net Cash Flow: ${formatCurrencyPlain(net)}`, 14, y);
+    y += 7;
+    doc.text(`Closing Balance: ${formatCurrencyPlain(closing)}`, 14, y);
+
+    const safeName = businessName.replace(/[^a-z0-9]/gi, "_");
+
+    doc.save(`CashFlow_${safeName}_${month}.pdf`);
 
 }
 
